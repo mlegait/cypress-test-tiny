@@ -1,8 +1,10 @@
 /// <reference types="cypress" />
 describe("page", () => {
   it("works", () => {
-    const url: string = "https://example.cypress.io";
-    cy.log("url", url);
-    cy.visit(url);
+    const objectWithUrlInside = {
+      url: "https://example.cypress.io",
+    };
+    // Use optional chaining on purpose
+    cy.visit(objectWithUrlInside?.url);
   });
 });
